@@ -1,0 +1,9 @@
+Compulsory{
+1.
+Clasele au fost implementate dupa indiciile din slide-urile de Laborator
+2.
+save: implementat in slide-uri
+load: asemanator cu save doar ca citim un obiect cu ObjectInputStream in loc sa il scriem
+view: am folosit dekstop.browse, pentru ca pot fi deschidse in browser atat URI-uri, pdf-uri, fisiere text, etc, 
+dekstop.open nu poate deschide decat File-uri, nu si URI-uri
+}
