@@ -16,6 +16,9 @@ public class Main {
         }
     }
 
+    /**
+     * functie in care creeam un catalog si il salvam intr-un fisier
+     */
     private void testCreateSave() {
         try{
             Catalog catalog =
@@ -35,12 +38,18 @@ public class Main {
 
     }
 
+    /**
+     * functie in care citim un catalog dintr-un fisier si deschidem ceea ce se afla in el
+     * @throws CatalogUtil.InvalidCatalogException
+     */
     private void testLoadView() throws CatalogUtil.InvalidCatalogException {
         try {
             Catalog catalog = CatalogUtil.load
              ("C:\\Users\\GeorgeS\\Documents\\facultate\\An 2\\cursuri\\sem2\\ProgramareAvansata\\Lab5\\catalog.ser");
             //System.out.println(catalog);
             Document1 doc = catalog.findById("java2");
+            if (doc==null)
+                throw new CatalogUtil.InvalidCatalogException(new Exception("Nu exista documentul"));
             //System.out.println(doc);
             CatalogUtil.view(doc);
         } catch (/*CatalogUtil.InvalidCatalogException |*/ IOException | URISyntaxException | ClassNotFoundException e) {

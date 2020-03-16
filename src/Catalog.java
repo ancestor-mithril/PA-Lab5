@@ -40,6 +40,11 @@ public class Catalog implements Serializable {
         this.documents.add(document);
     }
 
+    /**
+     * functie care cauta intr-o lista un Document dupa id
+     * @param id
+     * @return documentul gasit, sau null
+     */
     public Document1 findById(String id) {
         /*
         for (Document1 d : documents)

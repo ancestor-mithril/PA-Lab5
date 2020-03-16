@@ -13,6 +13,14 @@ public class CatalogUtil {
              oos.writeObject(catalog);
         }
     }
+
+    /**
+     * citim de la path-ul respectiv un obiect binar
+     * @param path
+     * @return obiectul citit
+     * @throws ClassNotFoundException
+     * @throws IOException
+     */
     public static Catalog load(String path)
     throws ClassNotFoundException, IOException {
         //return new Catalog(path.substring(path.lastIndexOf('/')+1), path);
@@ -22,13 +30,31 @@ public class CatalogUtil {
             return catalog;
         }
     }
+
+    /**
+     * dupa tipul documentului il deschidem ca File sau c
+     * @param doc
+     * @throws IOException
+     * @throws URISyntaxException
+     */
     public static void view(Document1 doc) throws IOException, URISyntaxException {
-        Desktop desktop = Desktop.getDesktop();
-        desktop.browse(new URI(doc.getLocation()));
+
+
         //… browse or open, depending of the location type
+        //sau:
+        Desktop desktop = Desktop.getDesktop();
+        File file = new File("c:\\cygwin\\cygwin.bat");
+        if (!file.isDirectory())
+            file = file.getParentFile();
+        if (file.exists()){
+            desktop.open(new File(doc.getLocation()));
+        }
+        else
+            desktop.browse(new URI(doc.getLocation()));
+
     }
 
-    public class InvalidCatalogException extends Exception {
+    public static class InvalidCatalogException extends Exception {
         public InvalidCatalogException(Exception ex) {
             super("Invalid catalog file.", ex);
         }
