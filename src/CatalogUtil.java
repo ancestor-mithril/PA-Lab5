@@ -2,6 +2,11 @@ import java.awt.*;
 import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import com.fasterxml.jackson.*;
+import org.codehaus.jackson.map.ObjectMapper;
 
 public class CatalogUtil {
 
@@ -30,7 +35,22 @@ public class CatalogUtil {
             return catalog;
         }
     }
-
+    /**
+     * https://kodejava.org/how-to-read-and-write-java-object-to-json-file/
+     * JSON-ul este plain text.
+     */
+    public static void saveText(Catalog catalog) throws IOException {
+        File file= new File(catalog.getPath()+".json");
+        ObjectMapper mapper=new ObjectMapper();
+        mapper.writeValue(file, catalog);
+    }
+    public static Catalog loadText(String path) throws IOException {
+        File file= new File(path+".json");
+        //se presupune ca nu va fi nevoie de +.json, ci va face parte din path, dar pentru moment ramane ca sa poata fi apelat la fel ca load()
+        ObjectMapper mapper=new ObjectMapper();
+        Catalog catalog=mapper.readValue(file, Catalog.class);
+        return catalog;
+    }
     /**
      * dupa tipul documentului il deschidem ca File sau c
      * @param doc
