@@ -8,15 +8,15 @@ import java.net.URISyntaxException;
 public class Main {
     public static void main(String args[])  {
         Main app = new Main();
-
+/*
         app.testCreateSave();
         try {
             app.testLoadView();
         } catch (CatalogUtil.InvalidCatalogException | URISyntaxException e) {
             e.printStackTrace();
         }
-
-        /*try {
+*/
+        try {
             ShellInterface shell=new Shell();
             shell.readInput();
         } catch (IOException e) {
@@ -24,7 +24,7 @@ public class Main {
         } catch (CustomException e) {
             e.printStackTrace();
         }
-    */
+
 
     }
 
