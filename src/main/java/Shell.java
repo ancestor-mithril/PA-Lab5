@@ -5,8 +5,8 @@ import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 import java.util.Scanner;
 
-public class Shell {
-    public static void readInput()
+public class Shell implements  ShellInterface{
+    public void readInput()
             throws IOException, CustomException {
         BufferedReader reader= new BufferedReader(new InputStreamReader(System.in));
         String command;
@@ -22,7 +22,7 @@ public class Shell {
             }
         }
     }
-    public static boolean execute(String command) throws CustomException, IOException, ClassNotFoundException, URISyntaxException {
+    public boolean execute(String command) throws CustomException, IOException, ClassNotFoundException, URISyntaxException {
         if (command.compareTo("quit")==0)
             return false;
         if (command.compareTo("help")==0)
@@ -37,14 +37,14 @@ public class Shell {
             throw new CustomException("Comanda nerecunoscuta. Pentru mai multe informatii tastati \"help\"");
         return true;
     }
-    public static void help(){
+    public void help(){
         System.out.println("Comenzile posibile sunt quit, help, save, load si view");
         System.out.println("quit va incheia executia programului");
         System.out.println("help este aceasta comanda");
         System.out.println("O comanda necunoscuta va arunca o eroare, dar executia programului va continua");
         System.out.println("Apasand save, load sau view se va incepe executia acestora, cu un protocol propriu ce va fi afisat imediat dupa apelare");
     }
-    public static void save() throws IOException {
+    public void save() throws IOException {
         BufferedReader reader= new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Introduceti numele catalogului pe care doriti sa il creati:");
         String nume=reader.readLine();
@@ -69,6 +69,12 @@ public class Shell {
         for (int i=0; i<n; i++){
             System.out.println("Introduceti id-ul documentului " + i + " din " + n);
             id=reader.readLine();
+            if (catalog.findById(id)!=null){
+                System.out.println("Exista deja un document cu id-ul respectiv");
+                i--;
+                continue;
+            }
+
             System.out.println("Introduceti numele documentului " + i + " din " + n);
             nume=reader.readLine();
             System.out.println("Introduceti locatia documentului " + i + " din " + n);
@@ -84,7 +90,7 @@ public class Shell {
         CatalogUtil.save(catalog);
         System.out.println("Felicitari, documentul a fost salvat!");
     }
-    public static void loadView() throws IOException, ClassNotFoundException, URISyntaxException {
+    public void loadView() throws IOException, ClassNotFoundException, URISyntaxException {
         Catalog catalog;
         BufferedReader reader= new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Introduceti calea catre catalogul pe care doriti sa il incarcati in memorie!");
@@ -96,6 +102,13 @@ public class Shell {
             throw e;
         }
         System.out.println("Incarcarea a reusit");
+        System.out.println("Daca doritu sa vizionati continutul unui catalog intr-un report html, apasati \"view\". " +
+                "Pentru a iesi, apasati orice");
+        cale=reader.readLine();
+        if (cale.compareTo("view")==0)
+            reportHTML(catalog);
+        else
+            return;
         while(true){
             System.out.println("Daca doriti sa continuati cu vizionarea vreunui document, tastati da, altfel tastati orice");
             cale=reader.readLine();
@@ -117,6 +130,9 @@ public class Shell {
         }
 
 
+    }
+    public void reportHTML(Catalog catalog) throws IOException, URISyntaxException {
+        CatalogUtil.reportHTML(catalog);
     }
 
 }

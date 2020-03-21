@@ -47,4 +47,13 @@ public class Document1 implements Serializable{
         tags.put(key, obj);
     }
 
+    @Override
+    public String toString() {
+        return "Document1{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", tags=" + tags +
+                '}';
+    }
 }

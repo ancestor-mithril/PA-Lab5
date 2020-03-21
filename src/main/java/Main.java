@@ -15,14 +15,17 @@ public class Main {
         } catch (CatalogUtil.InvalidCatalogException e) {
             e.printStackTrace();
         }
-        */
+*/
         try {
-            Shell.readInput();
+            ShellInterface shell=new Shell();
+            shell.readInput();
         } catch (IOException e) {
             e.printStackTrace();
         } catch (CustomException e) {
             e.printStackTrace();
         }
+
+
     }
 
     /**
@@ -51,7 +54,7 @@ public class Main {
      * functie in care citim un catalog dintr-un fisier si deschidem ceea ce se afla in el
      * @throws CatalogUtil.InvalidCatalogException
      */
-    private void testLoadView() throws CatalogUtil.InvalidCatalogException {
+    private void testLoadView() throws CatalogUtil.InvalidCatalogException, URISyntaxException {
         try {
             Catalog catalog = CatalogUtil.load
              ("C:\\Users\\GeorgeS\\Documents\\facultate\\An 2\\cursuri\\sem2\\ProgramareAvansata\\Lab5\\catalog.ser");
@@ -61,7 +64,9 @@ public class Main {
                 throw new CatalogUtil.InvalidCatalogException(new Exception("Nu exista documentul"));
             //System.out.println(doc);
             CatalogUtil.view(doc);
-        } catch (/*CatalogUtil.InvalidCatalogException |*/ IOException | URISyntaxException | ClassNotFoundException e) {
+        } catch (/*CatalogUtil.InvalidCatalogException |*/ IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

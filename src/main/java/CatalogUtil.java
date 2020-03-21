@@ -9,11 +9,11 @@ import java.nio.file.Paths;
 import org.codehaus.jackson.map.ObjectMapper;
 
 public class CatalogUtil {
-
+    private static int a=0;
 
     public static void save(Catalog catalog)
             throws IOException {
-        try (var oos = new ObjectOutputStream(
+        try (ObjectOutputStream oos = new ObjectOutputStream(
                 new FileOutputStream(catalog.getPath()))) {
              oos.writeObject(catalog);
         }
@@ -29,7 +29,7 @@ public class CatalogUtil {
     public static Catalog load(String path)
     throws ClassNotFoundException, IOException {
         //return new Catalog(path.substring(path.lastIndexOf('/')+1), path);
-        try(var oos = new ObjectInputStream(
+        try(ObjectInputStream oos = new ObjectInputStream(
                 new FileInputStream(path))){
             Catalog catalog = (Catalog)oos.readObject();
             return catalog;
@@ -72,6 +72,21 @@ public class CatalogUtil {
         else
             desktop.browse(new URI(doc.getLocation()));
 
+    }
+
+    public static void reportHTML(Catalog catalog) throws IOException, URISyntaxException {
+        File file=new File("report"+a+".html");
+        a++;
+        BufferedWriter writer=new BufferedWriter(new FileWriter(file));
+        writer.write("<h1>"+catalog.getName()+ "</h1>");
+        System.out.println(catalog.getName());
+        for (Document1 d:catalog.getDocuments()){
+            writer.write("<p>" + d.toString()+ "</p>");
+            System.out.println(d.toString());
+        }
+        writer.close();
+        Desktop desktop = Desktop.getDesktop();
+        desktop.browse(new URI(file.getPath()));
     }
 
     public static class InvalidCatalogException extends Exception {
