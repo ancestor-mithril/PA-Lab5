@@ -76,6 +76,13 @@ public class CatalogUtil {
 
     }
 
+    /**
+     * creaza un document html in care sunt scrise numele catalogului si continutul acestuia, adica
+     * lista si metadata documentelor componente.
+     * @param catalog
+     * @throws IOException
+     * @throws URISyntaxException
+     */
     public static void reportHTML(Catalog catalog) throws IOException, URISyntaxException {
         File file=new File("report"+a+".html");
         a++;

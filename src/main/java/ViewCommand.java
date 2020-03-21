@@ -4,6 +4,17 @@ import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 
 public class ViewCommand implements ViewInterface{
+
+    /**
+     * in metoda view implementeaza aceasta comanda.
+     * -exista o comunicare intre utilizator si program, utilizatorul putand vedea un document dintr-un catalog doar daca apasa "da"
+     * -daca apasa da si apoi introduce un id, documentul respectiv este cautat.
+     * -daca  nu este gasit utilizatorul este instiintat, dar executia se continua.
+     * -daca este gasit se apeleaza metoda CatalogUtil.view(), implementata la Compulsory.
+     * @param catalog
+     * @throws IOException
+     * @throws URISyntaxException
+     */
     public static void view(Catalog catalog) throws IOException, URISyntaxException {
         BufferedReader reader= new BufferedReader(new InputStreamReader(System.in));
         String str;

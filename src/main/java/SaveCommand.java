@@ -3,6 +3,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class SaveCommand implements SaveInterface{
+    /**
+     * -in metoda save, utilizatorul introduce numele si calea unui catalog pe care doreste sa il creeze, si este creat acel catalog
+     * -apoi utilizatorul introduce un numar de documente pe care doreste sa le adauge in acel catalog
+     * -pentru fiecare document se introduce id-ul, numele, locatia, tagurile
+     * -documentele sunt adaugate in catalog, si la final catalogul este salvat cu CatalogUtil.save(), de la Compulsory.
+     *  -eventualele erori pot duce doar la intreruperea comenzii de save(), nu si a shellului
+     * @throws IOException
+     */
     public static void save() throws IOException {
         BufferedReader reader= new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Introduceti numele catalogului pe care doriti sa il creati:");

@@ -4,6 +4,17 @@ import java.io.InputStreamReader;
 import java.net.URISyntaxException;
 
 public class LoadCommand implements LoadInterface{
+
+    /**
+     * -metoda load cere utilizatorului sa introduca o cale catre locul unde se afla catalogul, care apoi va fi incarcat in memorie
+     * -prin CatalogUtil.load
+     * -in caz de eroare se anunta utilizatorul de esec si se termina executia metodei, revenind in execute()
+     * -daca incarcarea catalogului a avut loc cu succes, utilizatorul poate sa opteze sa parareasca aceasta optiune, sau sa continue prin
+     * -vizionarea fie a reportului html, fie prin comanda list, fie prin view
+     * @throws IOException
+     * @throws ClassNotFoundException
+     * @throws URISyntaxException
+     */
     public static void load() throws IOException, ClassNotFoundException, URISyntaxException {
         Catalog catalog;
         BufferedReader reader= new BufferedReader(new InputStreamReader(System.in));
