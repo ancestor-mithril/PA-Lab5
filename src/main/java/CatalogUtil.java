@@ -81,10 +81,10 @@ public class CatalogUtil {
         a++;
         BufferedWriter writer=new BufferedWriter(new FileWriter(file));
         writer.write("<h1>"+catalog.getName()+ "</h1>");
-        System.out.println(catalog.getName());
+        //System.out.println(catalog.getName());
         for (Document1 d:catalog.getDocuments()){
             writer.write("<p>" + d.toString()+ "</p>");
-            System.out.println(d.toString());
+            //System.out.println(d.toString());
         }
         writer.close();
         Desktop desktop = Desktop.getDesktop();
