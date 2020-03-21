@@ -9,6 +9,10 @@ public class Document1 implements Serializable{
 
     private Map<String, Object> tags = new HashMap<>();
 
+    public Document1(){
+
+    }
+
     public Document1(String id, String name, String location) {
         this.id = id;
         this.name = name;

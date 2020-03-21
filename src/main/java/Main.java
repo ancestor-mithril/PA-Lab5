@@ -8,15 +8,15 @@ import java.net.URISyntaxException;
 public class Main {
     public static void main(String args[])  {
         Main app = new Main();
-        /*
+
         app.testCreateSave();
         try {
             app.testLoadView();
-        } catch (CatalogUtil.InvalidCatalogException e) {
+        } catch (CatalogUtil.InvalidCatalogException | URISyntaxException e) {
             e.printStackTrace();
         }
-*/
-        try {
+
+        /*try {
             ShellInterface shell=new Shell();
             shell.readInput();
         } catch (IOException e) {
@@ -24,7 +24,7 @@ public class Main {
         } catch (CustomException e) {
             e.printStackTrace();
         }
-
+    */
 
     }
 
@@ -43,7 +43,7 @@ public class Main {
             doc.addTag("type", "Slides");
             catalog.add(doc);
 
-            CatalogUtil.save(catalog);
+            CatalogUtil.saveText(catalog);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -56,7 +56,7 @@ public class Main {
      */
     private void testLoadView() throws CatalogUtil.InvalidCatalogException, URISyntaxException {
         try {
-            Catalog catalog = CatalogUtil.load
+            Catalog catalog = CatalogUtil.loadText
              ("C:\\Users\\GeorgeS\\Documents\\facultate\\An 2\\cursuri\\sem2\\ProgramareAvansata\\Lab5\\catalog.ser");
             //System.out.println(catalog);
             Document1 doc = catalog.findById("java2");
@@ -65,8 +65,6 @@ public class Main {
             //System.out.println(doc);
             CatalogUtil.view(doc);
         } catch (/*CatalogUtil.InvalidCatalogException |*/ IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
