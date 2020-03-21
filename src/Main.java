@@ -8,10 +8,19 @@ import java.net.URISyntaxException;
 public class Main {
     public static void main(String args[])  {
         Main app = new Main();
+        /*
         app.testCreateSave();
         try {
             app.testLoadView();
         } catch (CatalogUtil.InvalidCatalogException e) {
+            e.printStackTrace();
+        }
+        */
+        try {
+            Shell.readInput();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (CustomException e) {
             e.printStackTrace();
         }
     }
