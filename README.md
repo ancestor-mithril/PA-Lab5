@@ -41,6 +41,7 @@ Optional:{
     -daca  nu este gasit utilizatorul este instiintat, dar executia se continua.
     -daca este gasit se apeleaza metoda CatalogUtil.view(), implementata la Compulsory.
   }
+  
   b. public class SaveCommand implements SaveInterface{
     -in metoda save, utilizatorul introduce numele si calea unui catalog pe care doreste sa il creeze, si este creat acel catalog
     -apoi utilizatorul introduce un numar de documente pe care doreste sa le adauge in acel catalog
@@ -70,9 +71,7 @@ Optional:{
   Pentru toate cele mentionate mai sus, exceptiile vor fi in mare parte tratate in Shell::readInput(), doar daca nu este afectata
   executia metodei si se poate reveni la ea sunt tratate direct in metoda.
   
-  4. 
-  
-  CatalogUtil.reportHTML(Catalog catalog): creaza un document html in care sunt scrise numele catalogului si continutul acestuia, adica
+  4. CatalogUtil.reportHTML(Catalog catalog): creaza un document html in care sunt scrise numele catalogului si continutul acestuia, adica
   lista si metadata documentelor componente. Pentru fiecare apel al functiei creaza cate un document html nou, cu nume diferit de cele
   anterioare (valabil doar pentru sesiunea curenta). La finalul sesiunii se presupune ca nu se mai stie nimic din sesiunea anterioara
   De asemenea, il deschide cu load()
