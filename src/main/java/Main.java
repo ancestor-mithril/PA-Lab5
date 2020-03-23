@@ -35,7 +35,7 @@ public class Main {
         try{
             Catalog catalog =
                     new Catalog("Java Resources",
-                            "C:\\Users\\GeorgeS\\Documents\\facultate\\An 2\\cursuri\\sem2\\ProgramareAvansata\\Lab5\\catalog.ser");
+                            ".\\catalog.ser");
             Document1 doc = new Document1("java2", "Java Course 1",
                     "https://profs.info.uaic.ro/~acf/java/slides/en/intro_slide_en.pdf");
 
@@ -57,7 +57,7 @@ public class Main {
     private void testLoadView() throws CatalogUtil.InvalidCatalogException, URISyntaxException {
         try {
             Catalog catalog = CatalogUtil.loadText
-             ("C:\\Users\\GeorgeS\\Documents\\facultate\\An 2\\cursuri\\sem2\\ProgramareAvansata\\Lab5\\catalog.ser");
+             (".\\catalog.ser");
             //System.out.println(catalog);
             Document1 doc = catalog.findById("java2");
             if (doc==null)

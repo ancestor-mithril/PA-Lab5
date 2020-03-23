@@ -8,20 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cedd1f30-ea56-4673-97bd-7ce171588fba" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CatalogUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CatalogUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LoadCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LoadCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SaveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Shell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Shell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ViewCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ViewCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CatalogUtil$InvalidCatalogException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CatalogUtil$InvalidCatalogException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CatalogUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CatalogUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ListCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ListCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LoadCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LoadCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SaveCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SaveCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Shell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Shell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ViewCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ViewCommand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/my-app-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/my-app-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +197,9 @@
       <workItem from="1584367110429" duration="49000" />
       <workItem from="1584714588335" duration="3338000" />
       <workItem from="1584777360391" duration="16381000" />
-      <workItem from="1584796400814" duration="6079000" />
+      <workItem from="1584796400814" duration="6676000" />
+      <workItem from="1584815265532" duration="274000" />
+      <workItem from="1584980410237" duration="44000" />
     </task>
     <servers />
   </component>
@@ -249,22 +238,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="86" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584784854733" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1584802596108">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1584803215905">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584802596108" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1584802596108">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584803215905" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1584803215905">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584802596108" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1584802596108">
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584803215905" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1584803215905">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584802596108" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1584802596108">
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584803215905" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1584803215905">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584802596108" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584803215905" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1584298554644">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
